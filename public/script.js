@@ -48,15 +48,19 @@ function actualizarCodigo(codigo) {
 
 // Ejemplo de uso de MutationObserver
 const targetNode = document.getElementById('some-id');
-const config = { childList: true, subtree: true };
+if (targetNode) {
+    const config = { childList: true, subtree: true };
 
-const callback = (mutationsList, observer) => {
-    for (const mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-            console.log('Un nodo hijo ha sido añadido o removido.');
+    const callback = (mutationsList, observer) => {
+        for (const mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                console.log('Un nodo hijo ha sido añadido o removido.');
+            }
         }
-    }
-};
+    };
 
-const observer = new MutationObserver(callback);
-observer.observe(targetNode, config);
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+} else {
+    console.error("El elemento con ID 'some-id' no existe en el DOM.");
+}
