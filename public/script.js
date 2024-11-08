@@ -1,4 +1,4 @@
-const API_URL_VERIFICAR = 'https://script.google.com/macros/s/AKfycbxd2Trr3JhZDytDGRctGZLVbl32QtT-HYWoL-Uu6eEnkRwiAME_vn5XHZrfLQdG2nEy0w/exec';
+const API_URL_VERIFICAR = 'https://script.google.com/macros/s/AKfycbz4opwnfA7PxCQLaE7KzVknDxliBy48-tFCXlU6ZMgXv7rxbXRxXTBPj_Nym2ympI-psQ/exec';
 
 function verificarCodigo() {
     const codigo = document.getElementById('codigo').value;
