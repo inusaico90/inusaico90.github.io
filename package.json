@@ -1,0 +1,17 @@
+{
+  "name": "proyectoqr",
+  "version": "1.0.0",
+  "description": "Proyecto de validación de códigos QR",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "echo 'Deploying static files to Netlify'"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "license": "MIT"
+}
