@@ -42,3 +42,22 @@ function callbackFunc(data) {
         document.getElementById('resultado').innerText = "Código no válido o ya usado.";
     }
 }
+
+// Usar MutationObserver en lugar de DOMSubtreeModified
+const observer = new MutationObserver((mutationsList, observer) => {
+    for (const mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+            console.log('Se agregaron o eliminaron nodos hijos');
+        } else if (mutation.type === 'subtree') {
+            console.log('Se modificó el subárbol');
+        }
+    }
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+
+// Opcionalmente, puedes detener la observación cuando ya no la necesites
+// observer.disconnect();
