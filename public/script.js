@@ -1,4 +1,4 @@
-const API_URL_VERIFICAR = 'https://script.google.com/macros/s/AKfycbz4opwnfA7PxCQLaE7KzVknDxliBy48-tFCXlU6ZMgXv7rxbXRxXTBPj_Nym2ympI-psQ/exec';
+const API_URL_VERIFICAR = 'https://script.google.com/macros/s/AKfycbywpWK3C7XCthMha5y4M7tRQ_idaDMkRIR4q8RrOEf_CqPdqhx2CmJpy7GGc4BmQKrpXA/exec';
 
 function verificarCodigo() {
     const codigo = document.getElementById('codigo').value;
@@ -7,6 +7,12 @@ function verificarCodigo() {
     console.log("URL de verificación:", url); // Registro de depuración
     const script = document.createElement('script');
     script.src = url;
+    script.onload = () => {
+        console.log("Script cargado correctamente.");
+    };
+    script.onerror = () => {
+        console.error("Error al cargar el script.");
+    };
     document.body.appendChild(script);
 }
 
@@ -16,6 +22,12 @@ function actualizarCodigo(codigo) {
     console.log("URL de actualización:", url); // Registro de depuración
     const script = document.createElement('script');
     script.src = url;
+    script.onload = () => {
+        console.log("Script cargado correctamente.");
+    };
+    script.onerror = () => {
+        console.error("Error al cargar el script.");
+    };
     document.body.appendChild(script);
 }
 
