@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Validación de Código QR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Código</title>
+    <script>
+        // Función para obtener el valor de un parámetro de la URL
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Al cargar la página, prellenar el campo "codigo" si el parámetro existe
+        window.onload = function() {
+            const codigoParam = getParameterByName('codigo');
+            if (codigoParam) {
+                document.getElementById('codigo').value = codigoParam;
+            }
+        };
+    </script>
 </head>
 <body>
     <form id="verificar-form" onsubmit="return false;">
         <label for="codigo">Ingrese el código (ID):</label>
-        <input type="text" id="codigo" name="codigo" required>
+        <input type="text" id="codigo" name="codigo" required="">
         <button type="button" onclick="verificarCodigo()">Verificar</button>
     </form>
-    <p id="resultado"></p>
-
-    <script src="script.js"></script>
 </body>
 </html>
